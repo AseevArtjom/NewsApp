@@ -7,6 +7,15 @@
         xmlns:local="clr-namespace:NewsApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
+
+    <Window.Resources>
+        <Storyboard x:Key="DropDownStoryboard">
+            <DoubleAnimation Storyboard.TargetName="ListBoxContainer" 
+                         Storyboard.TargetProperty="Height" 
+                         To="100" Duration="0:0:0.5" />
+        </Storyboard>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="61*"></ColumnDefinition>
@@ -75,6 +84,20 @@
             </TabItem>
         </TabControl>
 
-        <Image Source = "./Assets/SportNews.png" Grid.Column="0" />
+        <Menu Grid.Row="1"
+  materialDesign:MenuAssist.TopLevelMenuItemHeight="25">
+            <MenuItem
+    Header="Very" Width="291" >
+                <MenuItem
+      Header="Новини про спорт" Width="291"/>
+                <MenuItem
+      Header="Item 2" Width="291"/>
+                <MenuItem
+      Header="Item 3" Width="291"/>
+            </MenuItem>
+
+        </Menu>
+
+        <Image Source = "./Assets/SportNews.png" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,-1,1627,0" />
     </Grid>
 </Window>

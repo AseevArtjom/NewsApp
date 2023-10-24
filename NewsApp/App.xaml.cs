@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewsApp.Domain;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,13 @@ namespace NewsApp
     /// </summary>
     public partial class App : Application
     {
+        NewsList list;
+
+        public App()
+        {
+            list = new NewsList();
+            list.AddNews(new News("123", "123", "123", "123"));
+            InitializeComponent();
+        }
     }
 }
