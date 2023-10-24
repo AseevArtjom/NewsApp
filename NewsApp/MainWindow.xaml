@@ -3,59 +3,78 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:NewsApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
-        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="61*"></ColumnDefinition>
+            <ColumnDefinition Width="339*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition/>
+            <RowDefinition Height="27*"></RowDefinition>
+            <RowDefinition Height="190*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <WrapPanel Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Height="100">
+        <TabControl Margin="1,0,0,0" Grid.RowSpan="2" Grid.Column="2">
+            <TabItem
+                Header="FootBall" Height="108">
+                <TextBlock >
+                    
+                    <ListView x:Name="LVMainFootball" ItemsSource="{Binding ListUsers}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel >
+                                    <Image Width="100" Source ="{Binding Photo}"/>
+                                    <TextBlock Text="{Binding Name}"/>
+                                    <TextBlock Text="{Binding Adress}"/>
+                                    <TextBlock Text="{Binding Phone}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </TextBlock>
 
-            <Button Margin="0,0,1020,0" Height="100" Width="100" Background="White" BorderThickness="0">
-                <Image Source="https://cdn.icon-icons.com/icons2/936/PNG/512/home_icon-icons.com_73532.png" Height="50" Width="50" HorizontalAlignment="Left"/>
-            </Button>
+            </TabItem>
+            <TabItem
+                Header="BasketBall" Height="112">
+                <TextBlock>
+                    
+                    <ListView x:Name="LVMainBasketBall" ItemsSource="{Binding ListUsers}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel >
+                                    <Image Width="100" Source ="{Binding Photo}"/>
+                                    <TextBlock Text="{Binding Name}"/>
+                                    <TextBlock Text="{Binding Adress}"/>
+                                    <TextBlock Text="{Binding Phone}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>         
+                </TextBlock>
 
-            <Button Background="White" BorderThickness="0" Height="60" Width="60" Margin="20,20,20,20">
-                <Image Source="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202011emailgmaillogomailsocialsocialmedia-115677_115624.png"/>
-            </Button>
-            <Button Background="White" BorderThickness="0" Height="60" Width="60" Margin="20,20,20,20">
-                <Image Source="https://cdn.icon-icons.com/icons2/2108/PNG/512/telegram_icon_130816.png"/>
-            </Button>
-            <Button Background="White" BorderThickness="0" Height="60" Width="60" Margin="20,20,20,20">
-                <Image Source="https://cdn.icon-icons.com/icons2/1753/PNG/512/iconfinder-social-media-applications-1facebook-4102573_113807.png"/>
-            </Button>
-            <Button Background="White" BorderThickness="0" Height="60" Width="60" Margin="20,20,20,20">
-                <Image Source="https://cdn.icon-icons.com/icons2/1211/PNG/512/1491579583-yumminkysocialmedia02_83111.png"/>
-            </Button>
-            <Button Background="White" BorderThickness="0" Height="60" Width="60" Margin="20,20,20,20">
-                <Image Source="https://cdn.icon-icons.com/icons2/1753/PNG/512/iconfinder-social-media-applications-3instagram-4102579_113804.png"/>
-            </Button>
-            <Button Background="White" BorderThickness="0" Height="60" Width="60" Margin="70,20,20,20">
-                <Image Source="https://cdn.icon-icons.com/icons2/1129/PNG/512/searchmagnifierinterfacesymbol1_79893.png"/>
-            </Button>
-        </WrapPanel>
+            </TabItem>
+            <TabItem
+                Header="VoleyBall" Height="110">
+                <TextBlock>
+                    <ListView x:Name="LVMainVoleyball" ItemsSource="{Binding ListUsers}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel >
+                                    <Image Width="100" Source ="{Binding Photo}"/>
+                                    <TextBlock Text="{Binding Name}"/>
+                                    <TextBlock Text="{Binding Adress}"/>
+                                    <TextBlock Text="{Binding Phone}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>     
+                </TextBlock>
+            </TabItem>
+        </TabControl>
 
-        <StackPanel Grid.Column="0" Grid.Row="1">
-            
-        </StackPanel>
-        
-        <ListView x:Name="LVNews" Grid.Column="1" Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch" >
-                        <Image Width="100" Height="100" Source="{Binding }"/>
-                        <Label Height="100" Width="100"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Image Source = "./Assets/SportNews.png" Grid.Column="0" />
     </Grid>
 </Window>
