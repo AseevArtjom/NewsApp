@@ -24,9 +24,17 @@ namespace NewsApp
         NewsList list;
         public MainWindow()
         {
-            list = new NewsList();
-            list.AddNews(new News("NEWS","Important news","","19.10.2023"));
             InitializeComponent();
+            list = new NewsList();
+            list.AddNews(new News("NEWS", "Important news", "", "19.10.2023"));
+            list.AddNews(new News("NEWS", "Important news", "", "19.10.2023"));
+            LVNews.ItemsSource = list.ListNews;
+        }
+
+        private void LVNews_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Window1 NewsWindow = new Window1();
+            NewsWindow.ShowDialog();
         }
     }
 }
