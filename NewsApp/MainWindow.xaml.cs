@@ -24,9 +24,42 @@ namespace NewsApp
         NewsList list;
         public MainWindow()
         {
-            list = new NewsList();
-            list.AddNews(new News("NEWS","Important news","","19.10.2023"));
             InitializeComponent();
+            list = new NewsList();
+            list.AddNews(new News("NEWS", "Important news", "", "19.10.2023"));
+            list.AddNews(new News("NEWS", "Important news", "", "19.10.2023"));
+            LVNews.ItemsSource = list.ListNews;
+        }
+
+        private void LVNews_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Window1 NewsWindow = new Window1();
+            NewsWindow.ShowDialog();
+        }
+        private void ShowLoginPopup(object sender, RoutedEventArgs e)
+        {
+            if(LoginPopup.IsOpen)
+            {
+                LoginPopup.IsOpen = false;
+            }
+            else
+            {
+                LoginPopup.IsOpen = true;
+            }
+        }
+
+        private void OnGotFocusHandler(object sender, MouseEventArgs e)
+        {
+            Button tb = e.Source as Button;
+            tb.Background = Brushes.White;
+            tb.Foreground = Brushes.Black;
+        }
+
+        private void OnLostFocusHandler(object sender, MouseEventArgs e)
+        {
+            Button tb = e.Source as Button;
+            tb.Background = Brushes.Black;
+            tb.Foreground = Brushes.White;
         }
     }
 }
