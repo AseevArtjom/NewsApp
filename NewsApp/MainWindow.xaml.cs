@@ -36,5 +36,30 @@ namespace NewsApp
             Window1 NewsWindow = new Window1();
             NewsWindow.ShowDialog();
         }
+        private void ShowLoginPopup(object sender, RoutedEventArgs e)
+        {
+            if(LoginPopup.IsOpen)
+            {
+                LoginPopup.IsOpen = false;
+            }
+            else
+            {
+                LoginPopup.IsOpen = true;
+            }
+        }
+
+        private void OnGotFocusHandler(object sender, MouseEventArgs e)
+        {
+            Button tb = e.Source as Button;
+            tb.Background = Brushes.White;
+            tb.Foreground = Brushes.Black;
+        }
+
+        private void OnLostFocusHandler(object sender, MouseEventArgs e)
+        {
+            Button tb = e.Source as Button;
+            tb.Background = Brushes.Black;
+            tb.Foreground = Brushes.White;
+        }
     }
 }
