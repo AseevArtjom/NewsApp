@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,12 +10,12 @@ namespace NewsApp.Domain
 {
     public class News : INotifyPropertyChanged
     {
-        private string? _titel;
-        private string? _description;
-        private string? _photo;
-        private string? _date;
+        public string? _titel;
+        public string? _description;
+        public string? _photo;
+        public string? _date;
 
-        public News(string titel,string desc,string photo,string date)
+        public News(string titel, string desc, string photo, string date)
         {
             Titel = titel;
             Description = desc;
@@ -25,7 +26,7 @@ namespace NewsApp.Domain
         public string? Titel
         {
             get { return _titel; }
-            set 
+            set
             {
                 _titel = value;
                 OnPropertyChanged("Titel");

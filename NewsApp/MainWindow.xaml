@@ -5,21 +5,130 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewsApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
+        Icon="https://i.imgur.com/0w0uCw8.png"
+        Title="MainWindow" Height="1080" Width="1920" Background="Linen">
     <Grid>
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="51"/>
+            <ColumnDefinition Width="249"/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="285*"/>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="LVNews1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Column="0" Grid.Row="0" Background="Black" Grid.ColumnSpan="2">
+            <Image Source="https://i.imgur.com/2hzEFwC.png" Height="100"/>
+        </WrapPanel>
+
+
+        <WrapPanel Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="0" HorizontalAlignment="Left"  Width="1620" Background="Black">
+
+            <Button Margin="5,0,1020,0" Height="80" Width="80" Background="White" BorderThickness="2"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+
+                <Image  Source="https://cdn.icon-icons.com/icons2/936/PNG/512/home_icon-icons.com_73532.png" Height="50" Width="50" HorizontalAlignment="Left"/>
+            </Button>
+
+
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="-80,20,20,20" HorizontalAlignment="Left"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                <Image Source="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202011emailgmaillogomailsocialsocialmedia-115677_115624.png"/>
+
+            </Button>
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="20,20,20,20" HorizontalAlignment="Left" 
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                <Image Source="https://cdn.icon-icons.com/icons2/2108/PNG/512/telegram_icon_130816.png"/>
+            </Button>
+
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="20,20,20,20" HorizontalAlignment="Left"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                <Image Source="https://cdn.icon-icons.com/icons2/1753/PNG/512/iconfinder-social-media-applications-1facebook-4102573_113807.png"/>
+            </Button>
+
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="20,20,20,20" HorizontalAlignment="Left"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                <Image Source="https://cdn.icon-icons.com/icons2/1211/PNG/512/1491579583-yumminkysocialmedia02_83111.png"/>
+            </Button>
+
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="20,20,20,20"  HorizontalAlignment="Left"
+                    IsEnabled="{Binding DataContext.ControlEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                <Image Source="https://cdn.icon-icons.com/icons2/1753/PNG/512/iconfinder-social-media-applications-3instagram-4102579_113804.png"/>
+            </Button>
+
+            <Button x:Name="UserButton" Background="White" BorderThickness="2" Height="60" Width="60" Margin="20,20,20,20" VerticalAlignment="Center" HorizontalAlignment="Left" Click="ShowLoginPopup"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                <Image Height="40" Width="35" VerticalAlignment="Center" HorizontalAlignment="Center" Source="https://cdn.icon-icons.com/icons2/1993/PNG/512/account_avatar_face_man_people_profile_user_icon_123197.png"/>
+            </Button>
+
+            <Popup x:Name="LoginPopup" IsOpen="False" StaysOpen="False" PlacementTarget="{Binding ElementName=UserButton}" Placement="Bottom" Height="250" Width="250">
+                <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="10" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+
+                        <WrapPanel Grid.Column="0" Grid.RowSpan="2" Orientation="Vertical">
+                            <Label Grid.Column="0" Grid.Row="0" Content="Login" FontSize="28" FontFamily="Arial Bold" HorizontalAlignment="Center"/>
+
+                            <Label Grid.Column="0" Grid.Row="0" Content="Login" FontSize="10" FontFamily="Arial Bold" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                            <TextBox Grid.Column="0" Grid.Row="0" x:Name="LoginBox" Height="40" Width="200" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Background="White" Margin="10,0,0,0"/>
+
+                            <WrapPanel Grid.Column="0" Grid.Row="0">
+                                <Label  Content="Password" FontSize="10" FontFamily="Arial Bold" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+                                <Button  Content="Forgot password?" FontSize="10" FontFamily="Arial Bold" Foreground="#007aff" HorizontalAlignment="Left" Margin="55,10,0,0" BorderThickness="0" Background="White"/>
+                            </WrapPanel>
+
+                            <PasswordBox Grid.Column="0" Grid.Row="1" x:Name="PasswordBox" Height="40" Width="200" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Background="White" Margin="10,0,0,0"/>
+                        </WrapPanel>
+                    </Grid>
+
+                </Border>
+            </Popup>
+
+        </WrapPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Background="Black" Orientation="Vertical" Grid.ColumnSpan="2">
+            <Button Height="50" Width="250" Content="Sport" FontSize="30" FontFamily="Arial Regular" BorderThickness="0" Margin="10,20,10,10" Background="Black" Foreground="White" MouseMove="OnGotFocusHandler" MouseLeave="OnLostFocusHandler"/>
+            <Button Height="50" Width="250" Content="Religion" FontSize="30" FontFamily="Arial Regular" BorderThickness="0" Margin="10,20,10,10" Background="Black" Foreground="White" MouseMove="OnGotFocusHandler" MouseLeave="OnLostFocusHandler" />
+            <Button Height="50" Width="250" Content="Traveling" FontSize="30" FontFamily="Arial Regular" BorderThickness="0" Margin="10,20,10,10" Background="Black" Foreground="White" MouseMove="OnGotFocusHandler" MouseLeave="OnLostFocusHandler"/>
+        </StackPanel>
+        <ListView x:Name="LVNews" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" MouseDoubleClick="LVNews_MouseDoubleClick">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-                    </Grid>
+                    <WrapPanel Orientation="Horizontal">
+                        <WrapPanel Grid.Column="1">
+                            <Label  Margin="5" Height="300" Width="200" HorizontalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" VerticalAlignment="Center" Content="{Binding Titel}"/>
+                            <Label  Margin="5" Height="300" Width="250" HorizontalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" VerticalAlignment="Center" Content="{Binding Description}"/>
+                        </WrapPanel>
+                        <WrapPanel></WrapPanel>
+                        <Image Grid.Column="2" Grid.Row="1" Source="{Binding Photo}" HorizontalAlignment="Right" Height="300"/>
+                    </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
+
 </Window>
