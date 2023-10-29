@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:NewsApp.Pages"
         mc:Ignorable="d"
         Height="1080" Width="1920" Background="Linen" >
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
