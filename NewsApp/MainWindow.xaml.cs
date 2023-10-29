@@ -24,10 +24,10 @@ namespace NewsApp
         NewsList list;
         public MainWindow()
         {
+            InitializeComponent();
             list = new NewsList();
             list.AddNews(new News("NEWS","Important news","","19.10.2023"));
             list.AddNews(new News("NEWS", "Important news", "", "19.10.2023"));
-            InitializeComponent();
         }
     }
 }
