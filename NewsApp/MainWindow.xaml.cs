@@ -1,4 +1,5 @@
-﻿using NewsApp.Domain;
+﻿using NewsApp.Navigator;
+using NewsApp.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,33 +11,42 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace NewsApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        NewsList list;
         public MainWindow()
         {
-            list = new NewsList();
-            list.AddNews(new News("NEWS","Important news","","19.10.2023"));
             InitializeComponent();
-            LVMainFootball.ItemsSource = list.ListNews;
+            NavigatorObject.pageSwitcher = this;
+            HomeMain homeMain = new HomeMain();
+            NavigatorObject.Switch(homeMain);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public Action ? CloseAction {  get; set; }
+
+        public void Navigate(UserControl nextPage)
         {
-            var dropDownStoryboard = FindResource("DropDownStoryboard") as Storyboard;
-            if (dropDownStoryboard != null)
+            this.Content = nextPage;
+        }
+
+        public void Navigate(UserControl nextPage, object state)
+        {
+            this.Content = nextPage;
+            INavigator? s = nextPage as INavigator;
+            if (s != null)
             {
-                dropDownStoryboard.Begin();
+                s.UtilizeStatr(state);
+            }
+            else
+            {
+                throw new ArgumentException("NextPage is not Navigator: " + nextPage.Name.ToString());
             }
         }
     }
