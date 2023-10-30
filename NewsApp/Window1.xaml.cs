@@ -20,17 +20,9 @@ namespace NewsApp
     /// </summary>
     public partial class Window1 : Window
     {
-        public NewsList SelectedNews { get; set; }
         public Window1()
         {
             InitializeComponent();
-        }
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (SelectedNews != null)
-            {
-                
-            }
         }
     }
 }

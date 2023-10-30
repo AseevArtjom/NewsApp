@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewsApp"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Window1" Height="1080" Width="1920">
     <Grid>
-        <Label x:Name="Element" Content="Label" HorizontalAlignment="Left" Margin="348,32,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Element2" Content="Label" HorizontalAlignment="Left" Margin="348,114,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Element3" Content="Label" HorizontalAlignment="Left" Margin="27,372,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Element4" Content="Label" HorizontalAlignment="Left" Margin="730,372,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Title" Content="Label" HorizontalAlignment="Left" Margin="303,77,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="description" Content="Label" HorizontalAlignment="Left" Margin="285,194,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="photo" Content="Label" HorizontalAlignment="Left" Margin="90,892,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="date" Content="Label" HorizontalAlignment="Left" Margin="1786,909,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

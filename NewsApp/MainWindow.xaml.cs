@@ -1,4 +1,5 @@
-﻿using NewsApp.Domain;
+﻿using MahApps.Metro.Controls;
+using NewsApp.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,11 +32,49 @@ namespace NewsApp
         }
         private void LVNews_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (LVNews.SelectedItem != null)
-            {
-                Window1 NewsWindow = new Window1();
-                
+            Window1 NewsWindow = new Window1();
+            if (e.ClickCount == 1) {
+                string Title1 = list.ListNews[0].Titel;
+                string description1 = list.ListNews[0].Description;
+                string author1 = list.ListNews[0].Photo;
+                string date1 = list.ListNews[0].Date;
+                System.Windows.Controls.Label titleLabel = new System.Windows.Controls.Label();
+                titleLabel.Content = Convert.ToString(Title1);
+                System.Windows.Controls.Label descriptionLabel = new System.Windows.Controls.Label();
+                descriptionLabel.Content = Convert.ToString(description1);
+                System.Windows.Controls.Label photolabel = new System.Windows.Controls.Label();
+                photolabel.Content = Convert.ToString(author1);
+                System.Windows.Controls.Label datelabel = new System.Windows.Controls.Label();
+                datelabel.Content = Convert.ToString(date1);
+                NewsWindow.Title.Content = titleLabel;
+                NewsWindow.description.Content = descriptionLabel;
+                NewsWindow.photo.Content = photolabel;
+                NewsWindow.date.Content = datelabel;
                 NewsWindow.ShowDialog();
+            }
+            else if(e.ClickCount == 2)
+            {
+                string Title2 = list.ListNews[1].Titel;
+                string description2 = list.ListNews[1].Description;
+                string author2 = list.ListNews[1].Photo;
+                string date2 = list.ListNews[1].Date;
+                System.Windows.Controls.Label titleLabel = new System.Windows.Controls.Label();
+                titleLabel.Content = Convert.ToString(Title2);
+                System.Windows.Controls.Label descriptionLabel = new System.Windows.Controls.Label();
+                descriptionLabel.Content = Convert.ToString(description2);
+                System.Windows.Controls.Label photolabel = new System.Windows.Controls.Label();
+                photolabel.Content = Convert.ToString(author2);
+                System.Windows.Controls.Label datelabel = new System.Windows.Controls.Label();
+                datelabel.Content = Convert.ToString(date2);
+                NewsWindow.Title.Content = titleLabel;
+                NewsWindow.description.Content = descriptionLabel;
+                NewsWindow.photo.Content = photolabel;
+                NewsWindow.date.Content = datelabel;
+                NewsWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("An error occurred when opening the news", "Error",MessageBoxButton.OK,MessageBoxImage.Error);
             }
         }
         private void ShowLoginPopup(object sender, RoutedEventArgs e)
