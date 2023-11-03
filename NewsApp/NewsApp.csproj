@@ -20,4 +20,8 @@
     <Resource Include="Screenshot_1.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
 </Project>

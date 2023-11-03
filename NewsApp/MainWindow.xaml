@@ -7,114 +7,178 @@
         mc:Ignorable="d"
         Icon="https://i.imgur.com/0w0uCw8.png"
         Title="MainWindow" Height="1080" Width="1920" Background="Linen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MyStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="480"/>
+            <ColumnDefinition Width="810"/>
+            <ColumnDefinition Width="330"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
-        <WrapPanel Grid.Column="0" Grid.Row="0" Background="Black">
+
+        <WrapPanel Grid.Column="0" Grid.Row="0" Background="#000d1f">
             <Image Source="https://i.imgur.com/2hzEFwC.png" Height="100"/>
         </WrapPanel>
 
 
-        <WrapPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left"  Width="1620" Background="Black">
-
-            <Button Margin="5,0,1020,0" Height="80" Width="80" Background="White" BorderThickness="2"
+        <WrapPanel Grid.Column="1" Background="#000d1f">
+            <Button Margin="5,15,0,0" Height="80" Width="80" Background="White" BorderThickness="2"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     ToolTip="Resource name: MaterialDesignRaisedLightButton">
-
-                <Image  Source="https://cdn.icon-icons.com/icons2/936/PNG/512/home_icon-icons.com_73532.png" Height="50" Width="50" HorizontalAlignment="Left"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="https://i.imgur.com/BsPVgfN.png" Stretch="Fill"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
+        </WrapPanel>
 
+        <WrapPanel Grid.Column="2" Grid.Row="0" Background="#000d1f" Orientation="Horizontal" Grid.ColumnSpan="2">
 
-            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="-80,20,20,20" HorizontalAlignment="Left"
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="420,20,20,20"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     ToolTip="Resource name: MaterialDesignRaisedLightButton">
-                <Image Source="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202011emailgmaillogomailsocialsocialmedia-115677_115624.png"/>
-                
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202011emailgmaillogomailsocialsocialmedia-115677_115624.png" Stretch="Fill"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+
             </Button>
-            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="20,20,20,20" HorizontalAlignment="Left" 
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="0,20,20,20"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     ToolTip="Resource name: MaterialDesignRaisedLightButton">
-                <Image Source="https://cdn.icon-icons.com/icons2/2108/PNG/512/telegram_icon_130816.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="https://cdn.icon-icons.com/icons2/2108/PNG/512/telegram_icon_130816.png" Stretch="Fill"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
 
-            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="20,20,20,20" HorizontalAlignment="Left"
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="0,20,20,20"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     ToolTip="Resource name: MaterialDesignRaisedLightButton">
-                <Image Source="https://cdn.icon-icons.com/icons2/1753/PNG/512/iconfinder-social-media-applications-1facebook-4102573_113807.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="https://cdn.icon-icons.com/icons2/1753/PNG/512/iconfinder-social-media-applications-1facebook-4102573_113807.png" Stretch="Fill"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
 
-            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="20,20,20,20" HorizontalAlignment="Left"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="0,20,20,20"
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     ToolTip="Resource name: MaterialDesignRaisedLightButton">
-                <Image Source="https://cdn.icon-icons.com/icons2/1211/PNG/512/1491579583-yumminkysocialmedia02_83111.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="https://cdn.icon-icons.com/icons2/1211/PNG/512/1491579583-yumminkysocialmedia02_83111.png" Stretch="Fill"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
 
-            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="20,20,20,20"  HorizontalAlignment="Left"
-                    IsEnabled="{Binding DataContext.ControlEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="0,20,20,20"
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     ToolTip="Resource name: MaterialDesignRaisedLightButton">
-                <Image Source="https://cdn.icon-icons.com/icons2/1753/PNG/512/iconfinder-social-media-applications-3instagram-4102579_113804.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="https://cdn.icon-icons.com/icons2/1753/PNG/512/iconfinder-social-media-applications-3instagram-4102579_113804.png" Stretch="Fill"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
+            <Label x:Name="UserNameTextBlock" Foreground="White" Background="#001428" BorderThickness="2" BorderBrush="Black" Content="Guest" Height="50" Width="230" FontSize="26" VerticalContentAlignment="Center" FontFamily="Arial" HorizontalContentAlignment="Right" Margin="20,0,0,0"/>
 
-            <Button x:Name="UserButton" Background="White" BorderThickness="2" Height="60" Width="60" Margin="20,20,20,20" VerticalAlignment="Center" HorizontalAlignment="Left" Click="ShowLoginPopup"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            <Button x:Name="UserButton" Background="#000d1f" BorderThickness="2" Height="50" Width="50" VerticalAlignment="Center" Click="ShowLoginPopup" Margin="10,0,0,0"
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     ToolTip="Resource name: MaterialDesignRaisedLightButton">
-                <Image Height="40" Width="35" VerticalAlignment="Center" HorizontalAlignment="Center" Source="https://cdn.icon-icons.com/icons2/1993/PNG/512/account_avatar_face_man_people_profile_user_icon_123197.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="https://i.imgur.com/d58cEQ6.png" Stretch="Fill"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
 
-            <Popup x:Name="LoginPopup" IsOpen="False" StaysOpen="False" PlacementTarget="{Binding ElementName=UserButton}" Placement="Bottom" Height="250" Width="250">
+
+
+            <Popup x:Name="LoginPopup" IsOpen="False" StaysOpen="False" PlacementTarget="{Binding ElementName=UserButton}" Placement="Bottom" Height="300" Width="250" HorizontalOffset="-180">
                 <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="10" >
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="300"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="100"/>
-                            <RowDefinition Height="100"/>
+                            <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <WrapPanel Grid.Column="0" Grid.RowSpan="2" Orientation="Vertical">
-                            <Label Grid.Column="0" Grid.Row="0" Content="Login" FontSize="28" FontFamily="Arial Bold" HorizontalAlignment="Center"/>
+                        <WrapPanel Orientation="Vertical" Height="300" Width="250">
+                            <Label Content="Login" FontSize="28" FontFamily="Helvetica" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"/>
 
-                            <Label Grid.Column="0" Grid.Row="0" Content="Login" FontSize="10" FontFamily="Arial Bold" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-                            <TextBox Grid.Column="0" Grid.Row="0" x:Name="LoginBox" Height="40" Width="200" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Background="White" Margin="10,0,0,0"/>
+                            <Label Content="Email" FontSize="12" FontFamily="Helvetica" FontWeight="Bold" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxStyle}" x:Name="EmailBox" Height="40" Width="200" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="#dcdcdc" HorizontalAlignment="Center" FontFamily="Times New Roman" Background="White"/>
 
-                            <WrapPanel Grid.Column="0" Grid.Row="0">
-                                <Label  Content="Password" FontSize="10" FontFamily="Arial Bold" HorizontalAlignment="Left" Margin="10,10,0,0"/>
-                                <Button  Content="Forgot password?" FontSize="10" FontFamily="Arial Bold" Foreground="#007aff" HorizontalAlignment="Left" Margin="55,10,0,0" BorderThickness="0" Background="White"/>
+                            <WrapPanel >
+                                <Label Height="20"  Content="Password" FontSize="12" FontFamily="Helvetica" FontWeight="Bold" HorizontalAlignment="Left" Margin="5,0,20,0" />
+                                <Button Background="Transparent" BorderThickness="0" HorizontalAlignment="Right"  >
+                                    <TextBlock Text="Forgot password?" FontSize="12" FontFamily="Helvetica" Foreground="#007aff" MouseDown="ForgotPassword_Click"/>
+                                </Button>
                             </WrapPanel>
-                            
-                            <PasswordBox Grid.Column="0" Grid.Row="1" x:Name="PasswordBox" Height="40" Width="200" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Background="White" Margin="10,0,0,0"/>
+                            <PasswordBox  Style="{StaticResource RoundedPasswordBoxStyle}" x:Name="PasswordBox" Height="40" Width="200" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="#dcdcdc" HorizontalAlignment="Center" Background="White" Margin="0,-5,0,0"/>
+
+                            <Label x:Name="ErrorLabel" Height="20" Width="200" Margin="0,5,0,-10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Content="" FontFamily="Arial" FontSize ="10"/>
+
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Click="LoginClick" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="200" HorizontalAlignment="Center" Content="Login" FontSize="15" Background="#007aff" Foreground="White" BorderThickness="0" Margin="0,10,-5,0" />
+                            <Label Height="30" FontSize="10" FontFamily="Helvetica" Margin="0,5,0,0">
+                                <TextBlock>
+                                    <Run Text="Don't have an account?"/>
+                                    <Button Background="Transparent" BorderThickness="0" HorizontalAlignment="Right">
+                                        <TextBlock Text="Create new account" FontSize="10" FontFamily="Helvetica" Foreground="#007aff" MouseDown="CreateNewAccount_Click" Margin="-15,0,0,-5"/>
+                                    </Button>    
+                                </TextBlock>
+                            </Label>
                         </WrapPanel>
                     </Grid>
-                    
+
                 </Border>
             </Popup>
 
         </WrapPanel>
 
-        <StackPanel Grid.Column="0" Grid.Row="1" Background="Black" Orientation="Vertical">
-            <Button Height="50" Width="250" Content="Sport" FontSize="30" FontFamily="Arial Regular" BorderThickness="0" Margin="10,20,10,10" Background="Black" Foreground="White" MouseMove="OnGotFocusHandler" MouseLeave="OnLostFocusHandler"/>
-            <Button Height="50" Width="250" Content="Religion" FontSize="30" FontFamily="Arial Regular" BorderThickness="0" Margin="10,20,10,10" Background="Black" Foreground="White" MouseMove="OnGotFocusHandler" MouseLeave="OnLostFocusHandler" />
-            <Button Height="50" Width="250" Content="Traveling" FontSize="30" FontFamily="Arial Regular" BorderThickness="0" Margin="10,20,10,10" Background="Black" Foreground="White" MouseMove="OnGotFocusHandler" MouseLeave="OnLostFocusHandler"/> 
+        <StackPanel Grid.Column="0" Grid.Row="1" Background="#000d1f" Orientation="Vertical">
+            <Button Height="50" Width="250" Content="Sport" FontSize="30" FontFamily="Arial Regular" BorderThickness="0" Margin="10,20,10,10" Background="Indigo" Foreground="White" MouseMove="OnGotFocusHandler" MouseLeave="OnLostFocusHandler"/>
+            <Button Height="50" Width="250" Content="Religion" FontSize="30" FontFamily="Arial Regular" BorderThickness="0" Margin="10,20,10,10" Background="Indigo"  Foreground="White" MouseMove="OnGotFocusHandler" MouseLeave="OnLostFocusHandler" />
+            <Button Height="50" Width="250" Content="Traveling" FontSize="30" FontFamily="Arial Regular" BorderThickness="0" Margin="10,20,10,10" Background="Indigo" Foreground="White" MouseMove="OnGotFocusHandler" MouseLeave="OnLostFocusHandler"/>
         </StackPanel>
- 
-            <ListView x:Name="LVNews" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" MouseDoubleClick="LVNews_MouseDoubleClick">
+
+        <ListView x:Name="LVNews" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MouseDoubleClick="LVNews_MouseDoubleClick">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel Orientation="Horizontal">
