@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:NewsApp"
         mc:Ignorable="d"
         Icon="https://i.imgur.com/0w0uCw8.png"
-        Title="MainWindow" Height="1080" Width="1920" Background="Linen">
+        Title="MainWindow" Height="1080" Width="1720" MaxHeight="1080" MaxWidth="1720" Background="Linen" WindowState="Maximized">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -21,8 +21,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="480"/>
-            <ColumnDefinition Width="810"/>
-            <ColumnDefinition Width="330"/>
+            <ColumnDefinition Width="540"/>
+            <ColumnDefinition Width="400"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -49,9 +49,9 @@
             </Button>
         </WrapPanel>
 
-        <WrapPanel Grid.Column="2" Grid.Row="0" Background="#000d1f" Orientation="Horizontal" Grid.ColumnSpan="2">
+        <WrapPanel Grid.Column="2" Grid.Row="0" Background="#000d1f" Orientation="Horizontal">
 
-            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="420,20,20,20"
+            <Button Background="White" BorderThickness="2" Height="60" Width="60" Margin="70,20,20,20"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     ToolTip="Resource name: MaterialDesignRaisedLightButton">
@@ -113,9 +113,17 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Label x:Name="UserNameTextBlock" Foreground="White" Background="#001428" BorderThickness="2" BorderBrush="Black" Content="Guest" Height="50" Width="230" FontSize="26" VerticalContentAlignment="Center" FontFamily="Arial" HorizontalContentAlignment="Right" Margin="20,0,0,0"/>
+            
 
-            <Button x:Name="UserButton" Background="#000d1f" BorderThickness="2" Height="50" Width="50" VerticalAlignment="Center" Click="ShowLoginPopup" Margin="10,0,0,0"
+
+
+            
+        </WrapPanel>
+
+        <WrapPanel Background="#000d1f" Grid.Column="3" Grid.Row="0">
+            <Label x:Name="UserNameTextBlock" Foreground="White" Background="#001428" BorderThickness="2" BorderBrush="Black" Content="Guest" Height="60" Width="250" FontSize="26" VerticalContentAlignment="Center" FontFamily="Arial" HorizontalContentAlignment="Right" Margin="80,20,0,0"/>
+
+            <Button x:Name="UserButton" Background="#000d1f" BorderThickness="2" Height="60" Width="60" VerticalAlignment="Center" Click="ShowLoginPopup" Margin="10,20,0,0"
                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                     ToolTip="Resource name: MaterialDesignRaisedLightButton">
                 <Button.Template>
@@ -126,8 +134,6 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-
 
             <Popup x:Name="LoginPopup" IsOpen="False" StaysOpen="False" PlacementTarget="{Binding ElementName=UserButton}" Placement="Bottom" Height="300" Width="250" HorizontalOffset="-180">
                 <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="10" >
@@ -169,7 +175,6 @@
 
                 </Border>
             </Popup>
-
         </WrapPanel>
 
         <StackPanel Grid.Column="0" Grid.Row="1" Background="#000d1f" Orientation="Vertical">

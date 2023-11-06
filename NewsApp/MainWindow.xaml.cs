@@ -48,7 +48,7 @@ namespace NewsApp
             {
                 LoginPopup.IsOpen = false;
             }
-            else
+            else if(LoginPopup.IsOpen == false)
             {
                 LoginPopup.IsOpen = true;
             }
