@@ -8,18 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\SportNews.png" />
-    <None Remove="SportNews.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\SportNews.png" />
-    <Resource Include="SportNews.png" />
+    <Folder Include="Assets\" />
   </ItemGroup>
 
 </Project>

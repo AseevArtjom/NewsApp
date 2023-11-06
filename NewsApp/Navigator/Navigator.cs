@@ -9,7 +9,7 @@ namespace NewsApp.Navigator
 {
     class NavigatorObject
     {
-        public static MainWindow? pageSwitcher;
+        public static MainWindow1? pageSwitcher;
 
         public static void Switch(UserControl newPage)
         {
