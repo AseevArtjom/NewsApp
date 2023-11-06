@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NewsApp.Pages"
              mc:Ignorable="d" 
-         Height="1080" Width="1920" Background="Linen" >
+             Height="1080" Width="1920" Background="Linen" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
@@ -35,9 +35,6 @@
         </StackPanel>
 
         <StackPanel Background="Black" Grid.Row="1">
-            <Button FontFamily="Arial Regular" Content="All news" Margin="0,20,0,0" Background="Black"  BorderBrush="Black"  
-            MouseMove="OnGotFocusHandler"
-            MouseLeave="OnLostFocusHandler"/>
 
             <Button FontFamily="Arial Regular" Content="Sport" Margin="0,20,0,0" Background="White" BorderBrush="White" Foreground="Black"/>
 

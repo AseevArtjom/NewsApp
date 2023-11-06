@@ -27,9 +27,6 @@
         </StackPanel>
 
         <StackPanel Background="Black" Grid.Row="1">
-            <Button FontFamily="Arial Regular" Content="All news" Margin="0,20,0,0" Background="Black"  BorderBrush="Black"  
-        MouseMove="OnGotFocusHandler"
-        MouseLeave="OnLostFocusHandler"/>
 
             <Button FontFamily="Arial Regular" Content="Sport" Margin="0,20,0,0" Background="White" BorderBrush="White" Foreground="Black"/>
 
