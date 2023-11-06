@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using NewsApp.Domain.User;
+using NewsApp.Pages;
 
 namespace NewsApp
 {
@@ -22,6 +24,10 @@ namespace NewsApp
     public partial class MainWindow : Window
     {
         NewsList list;
+        User CurrentUser = new User();
+
+        private UserList users = new UserList();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,13 +42,13 @@ namespace NewsApp
             Window1 NewsWindow = new Window1();
             NewsWindow.ShowDialog();
         }
-        private void ShowLoginPopup(object sender, RoutedEventArgs e)
+        public void ShowLoginPopup(object sender, RoutedEventArgs e)
         {
             if(LoginPopup.IsOpen)
             {
                 LoginPopup.IsOpen = false;
             }
-            else
+            else if(LoginPopup.IsOpen == false)
             {
                 LoginPopup.IsOpen = true;
             }
@@ -52,14 +58,45 @@ namespace NewsApp
         {
             Button tb = e.Source as Button;
             tb.Background = Brushes.White;
-            tb.Foreground = Brushes.Black;
+            tb.Foreground = Brushes.Indigo;
         }
 
         private void OnLostFocusHandler(object sender, MouseEventArgs e)
         {
             Button tb = e.Source as Button;
-            tb.Background = Brushes.Black;
+            tb.Background = Brushes.Indigo;
             tb.Foreground = Brushes.White;
+        }
+
+        private void ForgotPassword_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void LoginClick(object sender, RoutedEventArgs e)
+        {
+            foreach(User item in users.GetUsers())
+            {
+                if(item.GetEmail() == EmailBox.Text && item.GetPassword() == PasswordBox.Password)
+                {
+                    CurrentUser = item;
+                    UserNameTextBlock.Content = CurrentUser.GetUserName();
+                    LoginPopup.IsOpen = false;
+                    return;
+                }
+            }
+            ErrorLabel.Foreground = Brushes.Red;
+            ErrorLabel.Content = "Incorrect password or email";
+
+            EmailBox.BorderBrush = Brushes.Red;
+            PasswordBox.BorderBrush = Brushes.Red;
+        }
+
+        private void CreateNewAccount_Click(object sender, MouseButtonEventArgs e)
+        {
+            RegistrationMenu registrationMenu = new RegistrationMenu(users);
+            registrationMenu.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            registrationMenu.ShowDialog();
         }
     }
 }
