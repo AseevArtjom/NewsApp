@@ -1,4 +1,5 @@
-﻿using NewsApp.Navigator;
+﻿using NewsApp.Domain;
+using NewsApp.Navigator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +17,28 @@ using System.Windows.Shapes;
 
 namespace NewsApp.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для FootballMain.xaml
-    /// </summary>
+
     public partial class FootballMain : UserControl
     {
+        NewsList list;
+
         public FootballMain()
         {
             InitializeComponent();
+            list = new NewsList();
+            list.AddNews(new News("EURO 2024", "The national team of Ukraine defeated the national team of Malta in the qualification for the European Championship 2024 with a score of 2:1", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLndt9o-5VSDibcMTkmE7g6CBFIvDwuBe5qg&usqp=CAU", "19.10.2023"));
+            list.AddNews(new News("NEWS", "Important news", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLndt9o-5VSDibcMTkmE7g6CBFIvDwuBe5qg&usqp=CAU", "19.10.2023"));
+            list.AddNews(new News("NEWS", "Important news", "", "19.10.2023"));
+            list.AddNews(new News("NEWS", "Important news", "", "19.10.2023"));
+            list.AddNews(new News("NEWS", "Important news", "", "19.10.2023"));
+            list.AddNews(new News("NEWS", "Important news", "", "19.10.2023"));
+            LVNews.ItemsSource = list.ListNews;
+        }
+
+        private void WrapPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var news = (sender as StackPanel).DataContext as News;
+            NavigatorObject.Switch(new NewsScreen(news.Titel,news.Description,news.Photo,news.Date));
         }
 
         private void OnGotFocusHandler(object sender, RoutedEventArgs e)
