@@ -56,5 +56,22 @@ namespace NewsApp.Pages
         {
             NavigatorObject.Switch(new HomeMain());
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigatorObject.Switch(new HomeNews());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigatorObject.Switch(new ReligionMain());
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            NavigatorObject.Switch(new TravelingMain());
+
+        }
     }
 }

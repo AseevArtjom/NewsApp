@@ -11,16 +11,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace NewsApp.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для HomeMain.xaml
+    /// Логика взаимодействия для ReligionMain.xaml
     /// </summary>
-    public partial class HomeMain : UserControl
+    public partial class ReligionMain : UserControl
     {
-        public HomeMain()
+        public ReligionMain()
         {
             InitializeComponent();
         }
@@ -41,40 +42,20 @@ namespace NewsApp.Pages
             tb.Foreground = Brushes.White;
         }
 
-        private void Football_Click(object sender, RoutedEventArgs e)
-        {
-            NavigatorObject.Switch(new FootballMain());
-        }
-
-        private void Basketball_Click(object sender, RoutedEventArgs e)
-        {
-            NavigatorObject.Switch(new BasketballMain());
-        }
-
-        private void AllSports_Click(object sender, RoutedEventArgs e)
-        {
-            NavigatorObject.Switch(new HomeMain());
-        }
-
-        private void Voleyball_Click(object sender, RoutedEventArgs e)
-        {
-            NavigatorObject.Switch(new VoleyballMain());
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button1_Click(object sender, RoutedEventArgs e)
         {
             NavigatorObject.Switch(new HomeNews());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NavigatorObject.Switch(new ReligionMain());
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
             NavigatorObject.Switch(new TravelingMain());
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigatorObject.Switch(new HomeMain());
         }
     }
 }

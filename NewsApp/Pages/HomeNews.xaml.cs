@@ -97,5 +97,16 @@ namespace NewsApp.Pages
                 LoginPopup.IsOpen = true;
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigatorObject.Switch(new ReligionMain());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            NavigatorObject.Switch(new TravelingMain());
+
+        }
     }
 }

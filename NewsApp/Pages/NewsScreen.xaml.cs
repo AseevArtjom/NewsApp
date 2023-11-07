@@ -49,5 +49,16 @@ namespace NewsApp.Pages
             tb.Background = Brushes.Black;
             tb.Foreground = Brushes.White;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigatorObject.Switch(new ReligionMain());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigatorObject.Switch(new TravelingMain());
+
+        }
     }
 }
