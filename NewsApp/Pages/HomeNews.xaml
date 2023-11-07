@@ -92,11 +92,11 @@
 
             <Button FontFamily="Arial Regular" Content="Religion" Margin="0,20,0,0" Background="Black" BorderBrush="Black" 
              MouseMove="OnGotFocusHandler"
-             MouseLeave="OnLostFocusHandler"/>
+             MouseLeave="OnLostFocusHandler" Click="Button_Click_1"/>
 
             <Button FontFamily="Arial Regular" Content="Traveling" Margin="0,20,0,0" Background="Black" BorderBrush="Black" 
              MouseMove="OnGotFocusHandler"
-             MouseLeave="OnLostFocusHandler"/>
+             MouseLeave="OnLostFocusHandler" Click="Button_Click_2"/>
 
         </StackPanel>
 

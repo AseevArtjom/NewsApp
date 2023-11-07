@@ -72,7 +72,20 @@
 
             <Button FontFamily="Arial Regular" Content="Voleyball" Click="Voleyball_Click" Margin="0,65,0,0" Background="Black"  BorderBrush="Black"  
                     MouseMove="OnGotFocusHandler"
-                    MouseLeave="OnLostFocusHandler"/>   
+                    MouseLeave="OnLostFocusHandler"/>
+
+            <Button Margin="1100,15,0,0" Height="80" Width="80" Background="White" BorderThickness="2"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="Button_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="https://i.imgur.com/BsPVgfN.png" Stretch="Fill"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
 
         <StackPanel Background="Black" Grid.Row="1">
@@ -81,11 +94,11 @@
 
             <Button FontFamily="Arial Regular" Content="Religion" Margin="0,20,0,0" Background="Black" BorderBrush="Black" 
                      MouseMove="OnGotFocusHandler"
-                     MouseLeave="OnLostFocusHandler"/>
+                     MouseLeave="OnLostFocusHandler" Click="Button_Click_1"/>
 
             <Button FontFamily="Arial Regular" Content="Traveling" Margin="0,20,0,0" Background="Black" BorderBrush="Black" 
                      MouseMove="OnGotFocusHandler"
-                     MouseLeave="OnLostFocusHandler"/>  
+                     MouseLeave="OnLostFocusHandler" Click="Button_Click_2"/>  
 
         </StackPanel>
 
