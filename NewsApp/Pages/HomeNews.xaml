@@ -6,6 +6,17 @@
              xmlns:local="clr-namespace:NewsApp.Pages"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920" Background="Linen">
+
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./MyStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
@@ -17,7 +28,60 @@
         </Grid.RowDefinitions>
 
         <StackPanel  Background="Black" Grid.Column="1" Orientation = "Horizontal">
-            
+            <Label x:Name="UserNameTextBlock" Foreground="White" Background="Indigo" BorderThickness="2" BorderBrush="Black" Content="Guest" Height="60" Width="250" FontSize="26" VerticalContentAlignment="Center" FontFamily="Arial" HorizontalContentAlignment="Right" Margin="1250,20,0,20"/>
+
+            <Button x:Name="UserButton" Background="#000d1f" BorderThickness="2" Height="60" Width="60" VerticalAlignment="Center" Click="ShowLoginPopup" Margin="10,20,0,20"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="https://i.imgur.com/d58cEQ6.png" Stretch="Fill"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Popup x:Name="LoginPopup" IsOpen="False" StaysOpen="False" PlacementTarget="{Binding ElementName=UserButton}" Placement="Bottom" Height="300" Width="250" HorizontalOffset="-180">
+                <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="10" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <WrapPanel Orientation="Vertical" Height="300" Width="250">
+                            <Label Content="Login" FontSize="28" FontFamily="Helvetica" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"/>
+
+                            <Label Content="Email" FontSize="12" FontFamily="Helvetica" FontWeight="Bold" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxStyle}" x:Name="EmailBox" Height="40" Width="200" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="#dcdcdc" HorizontalAlignment="Center" FontFamily="Times New Roman" Background="White"/>
+
+                            <WrapPanel >
+                                <Label Height="20"  Content="Password" FontSize="12" FontFamily="Helvetica" FontWeight="Bold" HorizontalAlignment="Left" Margin="5,0,20,0" />
+                                <Button Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Click="ForgetPasswordClick" >
+                                    <TextBlock Text="Forgot password?" FontSize="12" FontFamily="Helvetica" Foreground="#007aff"/>
+                                </Button>
+                            </WrapPanel>
+                            <PasswordBox  Style="{StaticResource RoundedPasswordBoxStyle}" x:Name="PasswordBox" Height="40" Width="200" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="1" BorderBrush="#dcdcdc" HorizontalAlignment="Center" Background="White" Margin="0,-5,0,0"/>
+
+                            <Label x:Name="ErrorLabel" Height="20" Width="200" Margin="0,5,0,-10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Content="" FontFamily="Arial" FontSize ="10"/>
+
+                            <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Click="LoginClick" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="200" HorizontalAlignment="Center" Content="Login" FontSize="15" Background="#007aff" Foreground="White" BorderThickness="0" Margin="0,10,-5,0" />
+                            <Label Height="30" FontSize="10" FontFamily="Helvetica" Margin="0,5,0,0">
+                                <TextBlock>
+                                    <Run Text="Don't have an account?"/>
+                                    <Button Background="Transparent" BorderThickness="0" HorizontalAlignment="Right">
+                                        <TextBlock Text="Create new account" FontSize="10" FontFamily="Helvetica" Foreground="#007aff" MouseDown="CreateNewAccount_Click" Margin="-15,0,0,-5"/>
+                                    </Button>    
+                                </TextBlock>
+                            </Label>
+                        </WrapPanel>
+                    </Grid>
+
+                </Border>
+            </Popup>
         </StackPanel>
 
         <StackPanel Background="Black" Grid.Row="1">
@@ -25,7 +89,7 @@
             <Button FontFamily="Arial Regular" Content="Sport" Margin="0,20,0,0" Background="Black" BorderBrush="Black" 
              MouseMove="OnGotFocusHandler"
              MouseLeave="OnLostFocusHandler" Click="Button_Click"/>
-            
+
             <Button FontFamily="Arial Regular" Content="Religion" Margin="0,20,0,0" Background="Black" BorderBrush="Black" 
              MouseMove="OnGotFocusHandler"
              MouseLeave="OnLostFocusHandler"/>
