@@ -25,7 +25,7 @@ namespace NewsApp
         {
             InitializeComponent();
             NavigatorObject.pageSwitcher = this;
-            HomeMain homeMain = new HomeMain();
+            HomeNews homeMain = new HomeNews();
             NavigatorObject.Switch(homeMain);
         }
 
