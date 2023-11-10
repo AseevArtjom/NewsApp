@@ -51,5 +51,16 @@
         <StackPanel Background="Black">
             <Image Source="https://i.imgur.com/2hzEFwC.png"/>
         </StackPanel>
+
+        <ListView x:Name="LVNews" Grid.Column="1" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" MouseDown="WrapPanel_MouseDown">
+                        <TextBlock  Margin="5" Height="100" Width="250" HorizontalAlignment="Center" Text="{Binding Titel}"/>
+                        <TextBlock  Margin="5" Height="100" Width="1000" HorizontalAlignment="Center" Text="{Binding Description}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>
