@@ -1,4 +1,5 @@
-﻿using NewsApp.Navigator;
+﻿using NewsApp.Domain;
+using NewsApp.Navigator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,11 @@ namespace NewsApp.Pages
             tb.Background = Brushes.Black;
             tb.Foreground = Brushes.White;
         }
-
+        private void WrapPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var news = (sender as StackPanel).DataContext as News;
+            NavigatorObject.Switch(new NewsScreen(news.Titel, news.Description, news.Photo, news.Date));
+        }
         private void Football_Click(object sender, RoutedEventArgs e)
         {
             NavigatorObject.Switch(new FootballMain());
